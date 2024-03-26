@@ -1,0 +1,457 @@
+:root{
+    --PrimaryColor: hsl(94,59%,35%);
+    --HoverColor: #bdf094;
+    --paleGreen: hsl(96,75%,89%);
+    --whiteColor: hsl(0,0%,100%);
+    --blackColor: hsl(0,0%,18%);
+    --textColor: hsl(240,1%,48%);
+    --bgColor: hsl(220,10%,94%);
+    --greyText: rgb(190,190,190);
+    --inputColor: hsl(330,12%,97%);
+  
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;  
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize: .75rem;
+  }
+
+  .TopSection{
+    .HeaderSection{
+        justify-content: space-between;
+        .title{
+            h1{
+                font-size: var(--h1FontSize);
+                color: var(--blackColor);
+                font-weight: 700;
+            }
+    
+            p{
+                font-size: var(--normalFontSize);
+                color: var(--textColor);
+                font-weight: 500;
+            }
+        }
+    
+
+    .SearchBar{
+        position: relative;
+        height: 52px;
+        width: 250px;
+        gap: 1rem;
+        color: black;
+        overflow: hidden;
+        border-radius: 5px;
+       
+
+        input{
+            position: absolute;
+            height: 100%;
+            width:100%;
+            max-width: 200%;
+            color: black;
+            // line-height: 52px;
+            outline: 0;
+            background-color: rgb(49, 113, 49);
+            // padding-top: 25px;
+            border: none;
+            border-bottom: -150px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .label-wrapper{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            background-color: inherit;
+            left: 0;
+            pointer-events:none;
+            border-bottom: 1px solid white;
+        }
+
+        .label-wrapper::after{
+            content: "";
+            position: absolute;
+            height:60%;
+            width: 100%;
+            color: black;
+            border-bottom: 3px solid #406621;
+            left: 0;
+            bottom: -1px;   
+            transform: translateX(-100%);
+            transition: transform 0.2s ease;
+        }
+
+        .label-text{
+        position: absolute;
+        color: black;
+        bottom: 7px;
+        left: 7px;
+        transition: all 0.2s ease;
+        }
+
+        input:focus + .label-wrapper .label-text,
+        input:valid + .label-wrapper .label-text{
+            font-size: 12px;
+            color: #263b14;
+            transform: translateY(-150%);
+        }
+        input:focus + .label-wrapper::after,
+        input:valid + .label-wrapper::after{
+            transform: translateX(0%);
+        }
+        .icon{
+            color: var(--textColor);
+            &:hover{
+                color: var(--PrimaryColor);
+            }
+        }
+    }
+
+    .AdminDiv{
+        gap: 1rem;
+
+        .icon{
+            font-size: var(--biggestFontSize);
+            background: var(--whiteColor);
+            border-radius: 5px;
+            margin-left: 12px;
+            padding: 5px;
+            box-shadow: 0 2px 4px var(--inputColor);
+            color: var(--textColor);
+        }
+        .AdminImage{
+            border: 3px sold var(--whiteColor);
+            border-radius: 10px;
+            width: 2.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px var(--inputColor);
+
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius:10px;
+            }
+        }
+    }
+    }
+
+    .CardSection{
+        margin-top: 3rem;
+        gap: 1rem;
+
+         .RightCard{
+             position:relative;
+             flex-basis: 70%;
+             height: 200px;
+             flex-direction: column;
+             align-items: flex-start;
+             justify-content: center;
+             margin:auto;
+             padding: 2rem;
+             border-radius: 1rem;
+             overflow: hidden;
+
+             .VideoDiv{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                video{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    top: 0;
+                    left: 0;
+                    opacity: 0.5;
+                    -webkit-filter: blur(5px);
+                    -moz-filter: blur(5px);
+                    -o-filter: blur(5px);
+                    -ms-filter: blur(5px);
+                    filter: blur(.5px);
+                }
+                .overlay-content{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(75, 77, 76, 0.5);
+                    width: 100vw;
+                    height: 60vh;
+                }
+             }
+             
+             h1,p,.btn,.btn1{
+                z-index: 100;
+             }
+             .btn,.btn1{
+                color: var(--whiteColor);
+             }
+             h1{
+                font-size: var(--PrimaryColor);
+                color: var(--whiteColor);
+                font-weight: 800;
+             }
+             p{
+                padding: 1rem;
+                color: var(--paleGreen);
+                font-weight: 500;
+             }
+             .buttons{
+                gap: 1rem;
+
+                .btn,.btn1{
+                    box-shadow: none;
+                    padding: .8rem 1.5rem;
+                    color: var(--PrimaryColor);
+                    border:2px solid transparent ;
+                }
+                .transparent{
+                    background: none;
+                    border: 2px solid var(--paleGreen);
+                    color: var(--paleGreen);
+
+                    &:hover{
+                        background: var(--paleGreen);
+                        color: var(--PrimaryColor);
+                    }
+                }
+             }
+         }
+         
+         .LeftCard{
+            flex-basis: 50%;
+            // margin-left: 100px;
+            .Main{
+                position: relative;
+                padding: 1rem;
+                height: 200px;
+                border-radius: 1rem;
+                justify-content: space-around;
+
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: var(--paleGreen);
+                    left: 0;
+                    bottom: 0;
+                    border-radius: 1rem;
+
+                }
+                .TextDiv{
+                    z-index:100;
+
+                    h1{
+                        font-size: var(--h1FontSize);
+                        padding-bottom: 1rem;
+                        color: var(--blackColor);
+                    }
+                    .flex{
+                        gap: 1.5rem;
+                        font-weight: 500;
+                        color: var(--blackColor);
+                    }
+                    small{
+                        font-size: var(--normalFontSize);
+                        display: block;
+                        color: var(--PrimaryColor);
+                        font-weight: 500;
+                        padding: .5rem 0;
+                    }
+                    .link{
+                        margin-top: 2rem;
+                        cursor: pointer;
+    
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            .icon{
+                                transform: translateX(10px);
+                                transition: .3s ease;
+                            }
+                        }
+                    }
+                }
+                .ImgDiv{
+                    transform: translateY(-20px);
+                    img{
+                        margin-right: -10px;
+                        width: 190px;
+                    }
+                }
+            }
+
+            .SideBarCard{
+                display: none;
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                position: relative;
+        
+                .icon{
+                    position: absolute;
+                    background: var(--HoverColor);
+                    border: 10px solid var(--whiteColor);
+                    font-size: 3rem;
+                    border-radius: 50%;
+                    top: -8px;
+                    right: 50%;
+                    transform: translate(50%);
+                    z-index: 100;
+                }
+                .CardContent{
+                    position: relative;
+                    padding:1rem;
+                    background: var(--HoverColor);
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+                h3{
+                    font-size: var(--h3FontSize);
+                    margin-top: 1rem;
+                    padding: 1rem 0;
+                    font-weight: 800;
+                    color: var(--blackColor);
+                }
+                p{
+                    font-size: var(--normalFontSize);
+                    color: var(--textColor);
+                    padding-bottom: 1rem;
+                    font-weight: 500;
+                }
+                .btn{
+                    position: relative;
+                    color: var(--textColor);
+                    z-index: 1000;
+                }
+                // .Circle1, .Circle2{
+                //     position: absolute;
+                //     background: var(--paleGreen);
+                //     border-radius: 50%;
+                //     opacity: .7
+                // }
+                // .Circle1{
+                //     height: 100px;
+                //     width: 100px;
+                //     top: -50px;
+                //     left: -50px;
+                // }
+                // .Circle2{
+                //     height: 150px;
+                //     width: 150px;
+                //     bottom: -80px;
+                //     right: -70px;
+                //     z-index: -1;
+                // }
+            }
+         }
+    }
+  }
+
+  @media screen and (max-width: 990px){
+    .CardSection{
+        flex-direction: column;
+
+        .RightCard, .LeftCard{
+            width: 100%;
+            flex-basis: 100%;
+        }
+
+        .LeftCard{
+            margin-top: 2rem;
+            align-self: flex-start;
+            height: 10px !important;
+
+            .SideBarCard{
+                display: block !important;
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 918px){
+    .HeaderSection{
+       .SearchBar{
+        display: none;
+       }
+    }
+  }
+
+  @media screen and (max-width: 725px){
+    .CardSection{
+        .LeftCard{
+            .Main{
+                width: 100%;
+            }
+
+            .SideBarCard{
+                display: none !important;
+            }
+        }
+    }
+  }
+  @media screen and (max-width: 490px){
+    .HeaderSection{
+        .AdminDiv{
+            display: none;
+        }
+        .title{
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    .CardSection{
+        .RightCard{
+            text-align: center;
+
+            .buttons{
+                margin: auto;
+                flex-direction: column;
+
+                .btn{
+                    width: 100%;
+                }
+            }
+        }
+
+        .LeftCard{
+            .Main{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .TextDiv{
+                    margin: auto;
+                }
+                &::before{
+                    width: 100% !important;
+                }
+
+                .ImgDiv{
+                    display: none;
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 390px){
+    .TopSection{
+        .CardSection{
+            .RightCard{
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+        }
+    }
+  }
